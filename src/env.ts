@@ -15,7 +15,7 @@ function numberEnv(name: string, fallback: number): number {
   return Number.isFinite(value) ? value : fallback;
 }
 
-const tursoDatabaseUrl = optionalEnv('TURSO_DATABASE_URL', 'file:./data/speakingbot.db');
+const tursoDatabaseUrl = optionalEnv('TURSO_DATABASE_URL', 'file:./data/bot-voicevox-samatsum.db');
 const tursoAuthToken = optionalEnv('TURSO_AUTH_TOKEN');
 if (!tursoDatabaseUrl.startsWith('file:') && !tursoAuthToken) {
   throw new Error('TURSO_AUTH_TOKEN is required when TURSO_DATABASE_URL points to a remote database.');

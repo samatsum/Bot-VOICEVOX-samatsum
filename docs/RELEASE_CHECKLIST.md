@@ -97,7 +97,7 @@
 - [ ] `.env` がZIP/Gitに含まれていない
 - [ ] 実Tokenがソース/履歴に含まれていない
 - [ ] VOICEVOX/各音声ライブラリの規約を再確認
-- [ ] SpeakingBot本体の配布ライセンスを決定
+- [ ] Bot-VOICEVOX-samatsum本体の配布ライセンスを決定
 - [ ] `package.json` versionを1.0.0へ変更
 - [ ] CHANGELOG更新
 - [ ] `v1.0.0` tag作成

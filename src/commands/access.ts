@@ -13,7 +13,7 @@ import type { Command } from '../types.js';
 
 const data = new SlashCommandBuilder()
   .setName('access')
-  .setDescription('SpeakingBotを利用できるユーザー範囲を設定します')
+  .setDescription('Bot-VOICEVOX-samatsumを利用できるユーザー範囲を設定します')
   .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
   .addSubcommand((subcommand) =>
     subcommand
@@ -64,8 +64,8 @@ export const accessCommand: Command = {
       await interaction.reply({
         content:
           mode === 'open'
-            ? '現在のアクセスモードは **open** です。サーバー内の全ユーザーがSpeakingBotを利用できます。'
-            : '現在のアクセスモードは **admin** です。「サーバー管理」権限を持つユーザーだけがSpeakingBotを利用できます。',
+            ? '現在のアクセスモードは **open** です。サーバー内の全ユーザーがBot-VOICEVOX-samatsumを利用できます。'
+            : '現在のアクセスモードは **admin** です。「サーバー管理」権限を持つユーザーだけがBot-VOICEVOX-samatsumを利用できます。',
         flags: MessageFlags.Ephemeral
       });
       return;
@@ -77,8 +77,8 @@ export const accessCommand: Command = {
     await interaction.reply({
       content:
         mode === 'open'
-          ? 'アクセスモードを **open** に変更しました。これ以降、サーバー内の全ユーザーがSpeakingBotを利用できます。'
-          : 'アクセスモードを **admin** に変更しました。これ以降、「サーバー管理」権限を持つユーザーだけがSpeakingBotを利用できます。',
+          ? 'アクセスモードを **open** に変更しました。これ以降、サーバー内の全ユーザーがBot-VOICEVOX-samatsumを利用できます。'
+          : 'アクセスモードを **admin** に変更しました。これ以降、「サーバー管理」権限を持つユーザーだけがBot-VOICEVOX-samatsumを利用できます。',
       flags: MessageFlags.Ephemeral
     });
   }

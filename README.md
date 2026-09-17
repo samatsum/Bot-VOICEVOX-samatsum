@@ -1,4 +1,4 @@
-# SpeakingBot
+# Bot-VOICEVOX-samatsum
 
 DiscordのテキストメッセージをVOICEVOXで読み上げる、Windows向けセルフホストBotです。
 
@@ -42,7 +42,7 @@ DiscordのテキストメッセージをVOICEVOXで読み上げる、Windows向�
 初回セットアップ済みなら、VOICEVOXを起動してから以下だけです。
 
 ```cmd
-cd /d C:\Users\あなたのユーザー名\DiscordBot-VOICEVOX
+cd /d C:\Users\あなたのユーザー名\Bot-VOICEVOX-samatsum
 npm.cmd run start
 ```
 
@@ -109,6 +109,6 @@ VOICEVOX本体および各音声ライブラリ・キャラクターの利用条
 
 ## ライセンスについて
 
-**このRCには、SpeakingBot本体の配布ライセンスをまだ確定していません。**
+**このRCには、Bot-VOICEVOX-samatsum本体の配布ライセンスをまだ確定していません。**
 
 GitHubをPublicにして第三者へ再利用・改変・再配布を許可したい場合は、v1.0.0公開前に `LICENSE` を選定してください。詳細は [`docs/RELEASE_CHECKLIST.md`](docs/RELEASE_CHECKLIST.md) を参照してください。

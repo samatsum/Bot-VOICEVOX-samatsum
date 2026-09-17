@@ -2,10 +2,10 @@
 
 ## `Could not read package.json` / `ENOENT`
 
-npmコマンドをSpeakingBot以外のフォルダで実行しています。コマンドプロンプトで、`package.json` があるフォルダへ移動してください。
+npmコマンドをBot-VOICEVOX-samatsum以外のフォルダで実行しています。コマンドプロンプトで、`package.json` があるフォルダへ移動してください。
 
 ```cmd
-cd /d C:\Users\user\DiscordBot-VOICEVOX
+cd /d C:\Users\user\Bot-VOICEVOX-samatsum
 dir package.json
 npm.cmd ci
 ```
@@ -58,9 +58,9 @@ Invoke-RestMethod http://127.0.0.1:50021/version
 npm.cmd ci
 ```
 
-## `Another SpeakingBot instance is active`
+## `Another Bot-VOICEVOX-samatsum instance is active`
 
-別PC/別ターミナルでSpeakingBotが稼働中です。正常終了してから切り替えてください。強制終了後はlock timeoutまで待ちます。
+別PC/別ターミナルでBot-VOICEVOX-samatsumが稼働中です。正常終了してから切り替えてください。強制終了後はlock timeoutまで待ちます。
 
 ## Turso `fetch failed` / timeout
 
@@ -74,4 +74,4 @@ Test-NetConnection <your-db-host>.turso.io -Port 443
 
 ## リアクションが付かない
 
-SpeakingBotに「リアクションの追加」権限が必要です。権限がなくても読み上げ自体は継続します。
+Bot-VOICEVOX-samatsumに「リアクションの追加」権限が必要です。権限がなくても読み上げ自体は継続します。

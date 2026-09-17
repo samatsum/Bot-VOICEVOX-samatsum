@@ -1,6 +1,6 @@
 # Third-party notices
 
-SpeakingBotは以下の外部ソフトウェア・ライブラリ等を利用します。
+Bot-VOICEVOX-samatsumは以下の外部ソフトウェア・ライブラリ等を利用します。
 
 - discord.js
 - @discordjs/voice

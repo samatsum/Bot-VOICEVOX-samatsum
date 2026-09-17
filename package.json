@@ -1,5 +1,5 @@
 {
-  "name": "speakingbot",
+  "name": "bot-voicevox-samatsum",
   "version": "1.0.0-rc.1",
   "private": true,
   "description": "Self-hosted Discord TTS bot using VOICEVOX, Discord.js, and Turso/libSQL",

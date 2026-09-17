@@ -6,7 +6,7 @@
 
 1. ブラウザで[Discord Developer Portal](https://discord.com/developers/applications)を開き、Discordへログインします。
 2. `New Application` を押します。
-3. 名前に `SpeakingBot` など分かりやすい名前を入力し、Applicationを作成します。
+3. 名前に `Bot-VOICEVOX-samatsum` と入力し、Applicationを作成します。
 4. 左側の `General Information` を開きます。
 5. `Application ID` をコピーします。これは `.env` の `DISCORD_APPLICATION_ID` に使用します。
 
@@ -33,7 +33,7 @@ Bot TokenはBotへログインできるパスワードです。
 
 - `MESSAGE CONTENT INTENT`: ON
 
-変更後は保存ボタンを押します。これがOFFだと、SpeakingBotは通常のテキストメッセージ本文を読み取れません。
+変更後は保存ボタンを押します。これがOFFだと、Bot-VOICEVOX-samatsumは通常のテキストメッセージ本文を読み取れません。
 
 ## 4. Server IDを取得
 
@@ -82,7 +82,7 @@ Botへ許可する推奨権限:
 
 ## 7. `.env` へ設定
 
-取得した3つの値は、SpeakingBotの `.env` に次のように設定します。
+取得した3つの値は、Bot-VOICEVOX-samatsumの `.env` に次のように設定します。
 
 ```env
 DISCORD_BOT_TOKEN=Botページで取得したToken

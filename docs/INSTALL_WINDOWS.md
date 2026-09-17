@@ -16,7 +16,7 @@ Tursoは必須ではありません。最初はローカルDBで動かし、複�
 
 ## 1. Node.jsをインストール
 
-Node.jsはSpeakingBotを動かすために必要な実行環境です。
+Node.jsはBot-VOICEVOX-samatsumを動かすために必要な実行環境です。
 
 1. ブラウザで[Node.js公式ダウンロードページ](https://nodejs.org/en/download)を開きます。
 2. Windows向けのインストーラーをダウンロードします。一般的なIntel・AMD搭載PCでは `x64` の `.msi` を選びます。ARM版Windows PCの場合は `ARM64` を選びます。
@@ -37,7 +37,7 @@ npm.cmd --version
 
 ## 2. VOICEVOXをインストール
 
-VOICEVOXは文章から音声を作るソフトです。SpeakingBotとは別にインストールし、Botの使用中は起動したままにします。
+VOICEVOXは文章から音声を作るソフトです。Bot-VOICEVOX-samatsumとは別にインストールし、Botの使用中は起動したままにします。
 
 1. [VOICEVOX公式サイト](https://voicevox.hiroshiba.jp/)を開きます。
 2. `ダウンロード` を選び、Windows版の案内に従ってダウンロードします。
@@ -51,7 +51,7 @@ VOICEVOXを起動したまま、ブラウザで次のURLを開きます。
 http://127.0.0.1:50021/version
 ```
 
-バージョン番号が表示されれば、SpeakingBotから接続できる状態です。ページを開けない場合は、VOICEVOXが起動しているか確認してください。
+バージョン番号が表示されれば、Bot-VOICEVOX-samatsumから接続できる状態です。ページを開けない場合は、VOICEVOXが起動しているか確認してください。
 
 ## 3. Discord Botを作る
 
@@ -65,17 +65,17 @@ http://127.0.0.1:50021/version
 
 Bot Tokenはパスワードと同じ秘密情報です。GitHub、Discordのメッセージ、Issue、スクリーンショットへ載せないでください。
 
-## 4. SpeakingBotをダウンロード
+## 4. Bot-VOICEVOX-samatsumをダウンロード
 
 ### 方法A: ZIPを使う
 
 Gitを使ったことがない場合はこちらが簡単です。
 
-1. [SpeakingBotのGitHubページ](https://github.com/samatsum/DiscordBot-VOICEVOX)を開きます。
+1. [Bot-VOICEVOX-samatsumのGitHubページ](https://github.com/samatsum/Bot-VOICEVOX-samatsum)を開きます。
 2. 緑色の `Code` ボタンを押します。
 3. `Download ZIP` を押します。
 4. ダウンロードしたZIPを右クリックし、`すべて展開` を選びます。
-5. 展開先を、例えば `C:\Users\あなたのユーザー名\DiscordBot-VOICEVOX` にします。
+5. 展開先を、例えば `C:\Users\あなたのユーザー名\Bot-VOICEVOX-samatsum` にします。
 
 展開後、`package.json`、`README.md`、`src` フォルダが同じ階層にあることを確認してください。ZIP名のフォルダが余分に重なっている場合は、`package.json` があるフォルダを以後の作業場所にします。
 
@@ -85,15 +85,15 @@ Gitを導入済みの場合は、コマンドプロンプトで次を実行し�
 
 ```cmd
 cd /d C:\Users\あなたのユーザー名
-git clone https://github.com/samatsum/DiscordBot-VOICEVOX.git
+git clone https://github.com/samatsum/Bot-VOICEVOX-samatsum.git
 ```
 
-## 5. SpeakingBotのフォルダへ移動
+## 5. Bot-VOICEVOX-samatsumのフォルダへ移動
 
-コマンドプロンプトを開き、実際に保存した場所へ移動します。以下は保存先が `C:\Users\user\DiscordBot-VOICEVOX` の例です。
+コマンドプロンプトを開き、実際に保存した場所へ移動します。以下は保存先が `C:\Users\user\Bot-VOICEVOX-samatsum` の例です。
 
 ```cmd
-cd /d C:\Users\user\DiscordBot-VOICEVOX
+cd /d C:\Users\user\Bot-VOICEVOX-samatsum
 dir package.json
 ```
 
@@ -102,14 +102,14 @@ dir package.json
 プロンプトが次のようになっていれば正しい状態です。
 
 ```text
-C:\Users\user\DiscordBot-VOICEVOX>
+C:\Users\user\Bot-VOICEVOX-samatsum>
 ```
 
 `C:\Users\user>` のまま `npm.cmd ci` を実行すると、`Could not read package.json` または `ENOENT` になります。その場合は、上の `cd /d` をもう一度実行してください。
 
 ## 6. envファイルを準備
 
-`.env` は、SpeakingBotが起動時に読み込む設定ファイルです。Discord Bot Tokenなどの秘密情報が入るため、GitHubからcloneまたはZIPをダウンロードしても付属しません。
+`.env` は、Bot-VOICEVOX-samatsumが起動時に読み込む設定ファイルです。Discord Bot Tokenなどの秘密情報が入るため、GitHubからcloneまたはZIPをダウンロードしても付属しません。
 
 | ファイル | 用途 | GitHubへ置けるか |
 | --- | --- | --- |
@@ -119,7 +119,7 @@ C:\Users\user\DiscordBot-VOICEVOX>
 準備方法は状況によって異なります。
 
 - 新しいDiscord Botを自分で作った場合: `.env.example` から `.env` を作ります。
-- 既存のSpeakingBotを別PCでも使う場合: 管理者から既存の `.env` を安全に受け取ります。
+- 既存のBot-VOICEVOX-samatsumを別PCでも使う場合: 管理者から既存の `.env` を安全に受け取ります。
 
 ### 方法A: `.env.example` から自分で作る
 
@@ -161,7 +161,7 @@ VOICEVOX_BASE_URL=http://127.0.0.1:50021
 配置場所の例:
 
 ```text
-C:\Users\user\DiscordBot-VOICEVOX\
+C:\Users\user\Bot-VOICEVOX-samatsum\
 ├─ package.json
 ├─ .env.example
 └─ .env              ← ここへ置く
@@ -170,7 +170,7 @@ C:\Users\user\DiscordBot-VOICEVOX\
 コマンドプロンプトでは次のように確認できます。`/a` は通常表示されないファイルも表示する指定です。
 
 ```cmd
-cd /d C:\Users\user\DiscordBot-VOICEVOX
+cd /d C:\Users\user\Bot-VOICEVOX-samatsum
 dir /a .env
 ```
 
@@ -239,6 +239,6 @@ npm.cmd run start
 
 ## 11. 2台目のPCで使う場合
 
-2台目にもNode.js、SpeakingBot、`.env`、VOICEVOXが必要です。依存ライブラリは2台目で `npm.cmd ci` を実行して導入します。
+2台目にもNode.js、Bot-VOICEVOX-samatsum、`.env`、VOICEVOXが必要です。依存ライブラリは2台目で `npm.cmd ci` を実行して導入します。
 
 ローカルDBでは設定をPC間共有できません。共有する場合はTursoを設定してください。同じDiscord Botを2台で同時起動しないでください。Discordコマンドが登録済みなら、2台目で `deploy:commands` を実行する必要はありません。

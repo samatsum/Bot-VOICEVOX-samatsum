@@ -7,7 +7,7 @@ Discord
   └─ VoiceStateUpdate
           │
           v
-SpeakingBot (Node.js / TypeScript)
+Bot-VOICEVOX-samatsum (Node.js / TypeScript)
   ├─ Access Service
   ├─ Settings Service
   ├─ Text Processor

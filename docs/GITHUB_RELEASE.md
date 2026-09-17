@@ -2,14 +2,14 @@
 
 ## 1. リポジトリを準備
 
-このリポジトリのルートをSpeakingBotのプロジェクトルートとして使用します。バージョン番号は `package.json` を正本とし、リリース単位はGit tagで管理します。
+このリポジトリのルートをBot-VOICEVOX-samatsumのプロジェクトルートとして使用します。バージョン番号は `package.json` を正本とし、リリース単位はGit tagで管理します。
 
 初回例:
 
 ```powershell
 git init
 git add .
-git commit -m "chore: prepare SpeakingBot v1.0.0-rc.1"
+git commit -m "chore: prepare Bot-VOICEVOX-samatsum v1.0.0-rc.1"
 git branch -M main
 git remote add origin <REPOSITORY_URL>
 git push -u origin main
@@ -48,6 +48,6 @@ GitHub Releasesで `v1.0.0-rc.1` をPre-releaseとして作成し、ZIPを添付
 
 ## 5. プロジェクトライセンス
 
-Public repoへ公開する前に、SpeakingBot本体をどのライセンスで配布するか決めてください。
+Public repoへ公開する前に、Bot-VOICEVOX-samatsum本体をどのライセンスで配布するか決めてください。
 
 ライセンスを付けないPublic repositoryは「自由に再利用できるOSS」という意味にはなりません。第三者へ改変・再配布を許可したい場合はMIT等の明示的ライセンスを検討してください。

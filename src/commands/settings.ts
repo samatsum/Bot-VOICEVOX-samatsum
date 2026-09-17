@@ -7,7 +7,7 @@ import {
 } from '../services/settings/guild-settings-service.js';
 import { getDictionaryChannelId, setDictionaryChannelId } from '../services/dictionary/dictionary-service.js';
 
-const data = new SlashCommandBuilder().setName('settings').setDescription('SpeakingBotのサーバー共通設定を確認・変更します');
+const data = new SlashCommandBuilder().setName('settings').setDescription('Bot-VOICEVOX-samatsumのサーバー共通設定を確認・変更します');
 data.addSubcommand((s)=>s.setName('show').setDescription('現在のサーバー設定を表示します'));
 data.addSubcommand((s)=>s.setName('max-length').setDescription('1件の最大読み上げ文字数を設定します').addIntegerOption((o)=>o.setName('value').setDescription(`${MIN_MAX_TEXT_LENGTH}〜${MAX_MAX_TEXT_LENGTH}`).setRequired(true).setMinValue(MIN_MAX_TEXT_LENGTH).setMaxValue(MAX_MAX_TEXT_LENGTH)));
 data.addSubcommand((s)=>s.setName('join-leave-notice').setDescription('VC入退室通知を設定します').addBooleanOption((o)=>o.setName('enabled').setDescription('ON/OFF').setRequired(true)));
@@ -23,7 +23,7 @@ async function show(interaction:any){
   const s=await getGuildSettings(interaction.guildId);
   const dict=await getDictionaryChannelId(interaction.guildId);
   await interaction.reply({content:[
-    '**SpeakingBot サーバー設定**',
+    '**Bot-VOICEVOX-samatsum サーバー設定**',
     `最大読み上げ文字数: **${s.maxTextLength}**`,
     `VC入退室通知: **${onOff(s.joinLeaveNotice)}**`,
     `添付ファイル通知: **${onOff(s.attachmentNotice)}**`,

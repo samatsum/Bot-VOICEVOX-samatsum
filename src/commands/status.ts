@@ -7,7 +7,7 @@ import { getVoicevoxVersion } from '../services/tts/voicevox-engine.js';
 import { getGuildVoiceConnection } from '../services/voice/connection-manager.js';
 
 function uptimeText(){const s=Math.floor(process.uptime());const h=Math.floor(s/3600);const m=Math.floor((s%3600)/60);const sec=s%60;return `${h}h ${m}m ${sec}s`;}
-export const statusCommand:Command={data:new SlashCommandBuilder().setName('status').setDescription('SpeakingBotの現在状態を確認します'),async execute(interaction){
+export const statusCommand:Command={data:new SlashCommandBuilder().setName('status').setDescription('Bot-VOICEVOX-samatsumの現在状態を確認します'),async execute(interaction){
   if(!interaction.inCachedGuild()){await interaction.reply({content:'このコマンドはDiscordサーバー内でのみ使用できます。',flags:MessageFlags.Ephemeral});return;}
   await interaction.deferReply({flags:MessageFlags.Ephemeral});
   let dbStatus='OK';try{await db.execute('SELECT 1 AS ok');}catch{dbStatus='ERROR';}
@@ -18,7 +18,7 @@ export const statusCommand:Command={data:new SlashCommandBuilder().setName('stat
   const lock=getInstanceLockHealth();
   const heartbeatAge=lock.lastSuccessfulHeartbeatAt?Math.max(0,Math.round((Date.now()-lock.lastSuccessfulHeartbeatAt)/1000)):null;
   await interaction.editReply([
-    '**SpeakingBot Status**',
+    '**Bot-VOICEVOX-samatsum Status**',
     `Discord: **OK**`,
     `VOICEVOX: **${vv}**`,
     `Database: **${dbStatus}** (${isRemoteDatabase()?'Turso Cloud':'local'})`,

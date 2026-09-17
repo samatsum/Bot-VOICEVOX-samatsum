@@ -3,7 +3,7 @@
 ## 通常起動
 
 1. VOICEVOXを起動
-2. SpeakingBotフォルダで:
+2. Bot-VOICEVOX-samatsumフォルダで:
 
 ```powershell
 npm.cmd run start
