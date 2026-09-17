@@ -11,7 +11,7 @@ Ctrl + C
 新しいソースを配置したら:
 
 ```powershell
-npm.cmd install
+npm.cmd ci
 ```
 
 Slash Commandが追加・削除・引数変更されたリリースでは:
@@ -42,7 +42,7 @@ npm.cmd run start
 
 1. Botを停止
 2. 直前のZIP/commitへ戻す
-3. `npm.cmd install`
+3. `npm.cmd ci`
 4. 必要なら旧版のコマンドを `deploy:commands`
 5. 起動
 

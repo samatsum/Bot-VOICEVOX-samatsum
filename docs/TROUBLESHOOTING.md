@@ -1,5 +1,21 @@
 # トラブルシューティング
 
+## `Could not read package.json` / `ENOENT`
+
+npmコマンドをSpeakingBot以外のフォルダで実行しています。コマンドプロンプトで、`package.json` があるフォルダへ移動してください。
+
+```cmd
+cd /d C:\Users\user\DiscordBot-VOICEVOX
+dir package.json
+npm.cmd ci
+```
+
+保存場所が異なる場合は、実際のフォルダパスへ読み替えます。
+
+## `node` または `npm.cmd` が認識されない
+
+[Node.js公式ページ](https://nodejs.org/en/download)からNode.js 24.17.0以上をインストールし、コマンドプロンプトを一度閉じて開き直してください。
+
 ## `TokenInvalid`
 
 `.env` の `DISCORD_BOT_TOKEN` を確認してください。Bot TokenとApplication IDを取り違えないでください。
@@ -38,8 +54,8 @@ Invoke-RestMethod http://127.0.0.1:50021/version
 
 新しいPC/新しい展開先では:
 
-```powershell
-npm.cmd install
+```cmd
+npm.cmd ci
 ```
 
 ## `Another SpeakingBot instance is active`

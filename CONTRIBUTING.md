@@ -5,7 +5,7 @@
 変更時の最低確認:
 
 ```powershell
-npm.cmd install
+npm.cmd ci
 npm.cmd run typecheck
 npm.cmd run build
 ```

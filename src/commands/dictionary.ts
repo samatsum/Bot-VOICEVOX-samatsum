@@ -92,7 +92,7 @@ async function autocomplete(interaction:AutocompleteInteraction){
     const includeDeleted=sub==='history';
     const entries=await searchDictionaryWordCandidates(interaction.guildId,String(focused.value??''),{includeDeleted,limit:25});
     await interaction.respond(entries.map((e)=>({
-      name:truncate(`${e.isDeleted?'[削除済み] ':''}${e.word} → ${e.reading}`),
+      name:truncate(`${e.isDeleted?'[削除済み] ':''}${e.word}`),
       value:e.word
     })));
   }catch{await interaction.respond([]).catch(()=>undefined);}

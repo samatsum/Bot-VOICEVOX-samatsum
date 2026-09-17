@@ -1,5 +1,6 @@
 @echo off
 setlocal
+cd /d "%~dp0"
 
 if not exist .env (
   if exist .env.example (
@@ -8,7 +9,7 @@ if not exist .env (
   )
 )
 
-call npm.cmd install
+call npm.cmd ci
 if errorlevel 1 exit /b %errorlevel%
 
 echo.

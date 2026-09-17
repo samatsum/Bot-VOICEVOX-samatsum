@@ -27,32 +27,50 @@ DiscordのテキストメッセージをVOICEVOXで読み上げる、Windows向�
 
 - Windows 10/11
 - Node.js 24.17.0 以上
-- VOICEVOX
-- Discord Bot Application
+- [VOICEVOX](https://voicevox.hiroshiba.jp/)
+- Discordアカウントと、自分が管理できるDiscordサーバー
 - Turso Cloud DB（複数PCで同じ設定を共有する場合。ローカルDBでも起動可能）
 
-## 最短セットアップ
+## 初めてセットアップする方へ
 
-1. このリポジトリ/ZIPを取得します。
-2. `.env.example` を `.env` にコピーして値を設定します。
-3. VOICEVOXを起動します。
-4. PowerShell 7またはコマンドプロンプトで次を実行します。
+事前にNode.jsやVOICEVOXを入れていない場合は、先に **[Windows初回導入ガイド](docs/INSTALL_WINDOWS.md)** を上から順番に進めてください。以下を含め、画面操作から説明しています。
 
-```powershell
-npm.cmd install
+1. Node.jsのダウンロードとインストール
+2. VOICEVOXのダウンロードと起動確認
+3. Discord Botの作成、Token・Application ID・Server IDの取得
+4. SpeakingBotのダウンロード
+5. `.env` の作成
+6. Discordへのコマンド登録とBotの起動
+
+Node.jsとVOICEVOXをすでに導入し、Discord Botも作成済みの場合の最短手順は次のとおりです。
+
+```cmd
+cd /d C:\Users\あなたのユーザー名\DiscordBot-VOICEVOX
+copy .env.example .env
+notepad .env
+npm.cmd ci
 npm.cmd run deploy:commands
 npm.cmd run start
 ```
 
-詳細は [`docs/INSTALL_WINDOWS.md`](docs/INSTALL_WINDOWS.md) を参照してください。
+コマンドは、必ず `package.json` があるSpeakingBotのフォルダで実行してください。次のコマンドで確認できます。
+
+```cmd
+dir package.json
+```
+
+`ファイルが見つかりません` と表示された場合は、現在いるフォルダが違います。詳しくは[初回導入ガイドの「SpeakingBotのフォルダへ移動」](docs/INSTALL_WINDOWS.md#5-speakingbotのフォルダへ移動)を確認してください。
 
 ## 普段の起動
 
 初回セットアップ済みなら、VOICEVOXを起動してから以下だけです。
 
-```powershell
+```cmd
+cd /d C:\Users\あなたのユーザー名\DiscordBot-VOICEVOX
 npm.cmd run start
 ```
+
+VOICEVOXを先に起動したままにしてください。終了するときはコマンド画面で `Ctrl+C` を押します。`start-bot.cmd` をダブルクリックして起動することもできます。
 
 複数PCで運用する場合は、同じBotを同時に2台で起動しないでください。Bot自身もTursoのinstance lockで二重起動を拒否します。
 

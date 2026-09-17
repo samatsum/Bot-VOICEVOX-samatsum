@@ -5,7 +5,7 @@
 ## クリーンインストール
 
 - [ ] 新しいWindows PCまたはクリーンなフォルダで導入できる
-- [ ] `npm.cmd install` が成功する
+- [ ] `npm.cmd ci` が成功する
 - [ ] `.env.example` だけを見て設定可能
 - [ ] `npm.cmd run deploy:commands` が成功する
 - [ ] `npm.cmd run start` が成功する
