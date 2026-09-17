@@ -8,7 +8,7 @@ if (env.tursoDatabaseUrl.startsWith('file:')) {
 
 export const db = createClient({
   url: env.tursoDatabaseUrl,
-  authToken: env.tursoAuthToken
+  ...(env.tursoAuthToken ? { authToken: env.tursoAuthToken } : {})
 });
 
 const schema = [

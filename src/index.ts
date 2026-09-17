@@ -31,7 +31,7 @@ async function main(){
 
   client.once(Events.ClientReady,async(readyClient)=>{
     console.log(`Logged in as ${readyClient.user.tag}`);
-    console.log('Phase 12.1 ready: dictionary autocomplete/history UI, settings/status, VC lifecycle, safer instance lease');
+    console.log('SpeakingBot is ready: dictionary, settings, status, and VC lifecycle are available');
     console.log(`VOICEVOX endpoint: ${env.voicevoxBaseUrl}`);
     try{console.log(`VOICEVOX connected: version ${await getVoicevoxVersion()}`);}catch(error){console.warn('VOICEVOX is not reachable. The Bot will stay online, but TTS will fail until VOICEVOX is started.');console.warn(error);}
   });

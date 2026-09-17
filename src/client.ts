@@ -1,6 +1,5 @@
 import { Client, GatewayIntentBits, Partials } from 'discord.js';
 
-// Phase 5:
 // - Guilds: Slash Commandなど、サーバー上の基本機能
 // - GuildVoiceStates: Botと利用者のVC参加状態を扱う
 // - GuildMessages: サーバー内の新規メッセージを受け取る

@@ -186,7 +186,7 @@ export async function synthesizeTestVoice(text: string, signal?: AbortSignal): P
   );
 }
 
-export const phase4TestVoice = {
+export const testVoice = {
   speakerName: TEST_SPEAKER_NAME,
   styleName: TEST_STYLE_NAME
 } as const;

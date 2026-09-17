@@ -2,9 +2,9 @@
 
 DiscordのテキストメッセージをVOICEVOXで読み上げる、Windows向けセルフホストBotです。
 
-**現在の配布版:** `1.0.0-rc.1`
+**現在のバージョン:** `1.0.0-rc.1`（RC版）
 
-この版は v1.0.0 候補版です。Phase 1〜12.1の機能を統合済みで、Phase 13の最終Regressionとクリーンインストール確認が通れば `1.0.0` に昇格します。
+バージョン番号の正本は [`package.json`](package.json) です。リリースは `v1.0.0-rc.1`、`v1.0.0` のようなGit tagで管理します。
 
 ## 主な機能
 
@@ -74,6 +74,7 @@ npm.cmd run start
 | `/dictionary ...` | 共有辞書 |
 | `/settings ...` | サーバー共通設定 |
 | `/status` | Discord / VOICEVOX / DB / VC / Queue状態 |
+| `/play-test` | Discord VCへの音声再生確認 |
 | `/access ...` | open/adminモード |
 | `/credits` | 音声クレジット |
 

@@ -17,7 +17,7 @@ const ffmpegPath = require('ffmpeg-static') as string | null;
 
 const players = new Map<string, AudioPlayer>();
 const ffmpegProcesses = new Map<string, ChildProcessWithoutNullStreams>();
-const TEST_AUDIO_PATH = path.resolve(process.cwd(), 'assets', 'phase3-test.ogg');
+const TEST_AUDIO_PATH = path.resolve(process.cwd(), 'assets', 'test-tone.ogg');
 const PLAYBACK_END_TIMEOUT_MS = 120_000;
 
 function getOrCreatePlayer(guildId: string): AudioPlayer {

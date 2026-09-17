@@ -6,7 +6,7 @@ import type { Command } from '../types.js';
 export const playTestCommand: Command = {
   data: new SlashCommandBuilder()
     .setName('play-test')
-    .setDescription('現在Botが参加しているVCでPhase 3の固定テスト音を再生します'),
+    .setDescription('現在Botが参加しているDiscord VCで音声再生を確認します'),
 
   async execute(interaction) {
     if (!interaction.inGuild()) {
