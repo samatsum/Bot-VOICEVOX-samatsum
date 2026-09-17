@@ -45,7 +45,8 @@ DiscordのテキストメッセージをVOICEVOXで読み上げる、Windows向�
 Node.jsとVOICEVOXをすでに導入し、Discord Botも作成済みの場合の最短手順は次のとおりです。
 
 ```cmd
-cd /d C:\Users\あなたのユーザー名\DiscordBot-VOICEVOX
+git clone https://github.com/samatsum/DiscordBot-VOICEVOX.git
+cd /d DiscordBot-VOICEVOX
 copy .env.example .env
 notepad .env
 npm.cmd ci
