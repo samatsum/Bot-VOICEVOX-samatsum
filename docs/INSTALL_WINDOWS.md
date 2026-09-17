@@ -107,7 +107,21 @@ C:\Users\user\DiscordBot-VOICEVOX>
 
 `C:\Users\user>` のまま `npm.cmd ci` を実行すると、`Could not read package.json` または `ENOENT` になります。その場合は、上の `cd /d` をもう一度実行してください。
 
-## 6. `.env` を作って設定
+## 6. envファイルを準備
+
+`.env` は、SpeakingBotが起動時に読み込む設定ファイルです。Discord Bot Tokenなどの秘密情報が入るため、GitHubからcloneまたはZIPをダウンロードしても付属しません。
+
+| ファイル | 用途 | GitHubへ置けるか |
+| --- | --- | --- |
+| `.env.example` | 設定項目だけを記載した公開用の見本 | 置ける（実際のTokenは禁止） |
+| `.env` | このPCで実際に使用する値を記載した設定 | 絶対に置かない |
+
+準備方法は状況によって異なります。
+
+- 新しいDiscord Botを自分で作った場合: `.env.example` から `.env` を作ります。
+- 既存のSpeakingBotを別PCでも使う場合: 管理者から既存の `.env` を安全に受け取ります。
+
+### 方法A: `.env.example` から自分で作る
 
 プロジェクトフォルダで次を実行します。
 
@@ -116,7 +130,7 @@ copy .env.example .env
 notepad .env
 ```
 
-メモ帳が開いたら、次の3か所を手順3で取得した値へ置き換えます。
+メモ帳が開いたら、手順3で取得した3つの値を入力します。
 
 ```env
 DISCORD_BOT_TOKEN=ここにBot Token
@@ -129,12 +143,46 @@ VOICEVOX_BASE_URL=http://127.0.0.1:50021
 
 - `=` の左右に空白を入れません。
 - 値を引用符で囲む必要はありません。
-- `your_bot_token_here` などの例示文字列を残さないでください。
-- ファイル名を `.env.txt` にしないでください。上のcopyコマンドを使えば `.env` になります。
+- 必須項目を空欄のままにしないでください。
 - `TURSO_DATABASE_URL` と `TURSO_AUTH_TOKEN` は、最初は空欄で構いません。
 - 保存後、メモ帳を閉じます。
 
-`.env` は `.gitignore` で除外されています。削除したり別PCへ移したりするときも、第三者に渡らないよう注意してください。
+### 方法B: 管理者から既存の `.env` を受け取る
+
+2台目のPCや運用担当者の交代など、同じDiscord Botと設定を引き継ぐ場合の方法です。
+
+1. Botの管理者から `.env` ファイルを受け取ります。
+2. パスワードマネージャーの安全な共有機能、暗号化ファイル、直接接続したUSBメモリなど、第三者が閲覧できない方法を使用します。暗号化ファイルのパスワードは、ファイルとは別の連絡手段で渡します。
+3. Discordの通常メッセージ、公開URL、メール本文、IssueへTokenを貼り付けないでください。
+4. 受け取った `.env` を `package.json` と同じフォルダへ置きます。
+5. ファイル名が正確に `.env` であり、`.env.txt` になっていないことを確認します。
+6. 配置後、転送用に作った一時ファイルや暗号化されていないコピーは削除します。
+
+配置場所の例:
+
+```text
+C:\Users\user\DiscordBot-VOICEVOX\
+├─ package.json
+├─ .env.example
+└─ .env              ← ここへ置く
+```
+
+コマンドプロンプトでは次のように確認できます。`/a` は通常表示されないファイルも表示する指定です。
+
+```cmd
+cd /d C:\Users\user\DiscordBot-VOICEVOX
+dir /a .env
+```
+
+`.env` が表示されれば配置完了です。既存の `.env` を受け取った場合は、`copy .env.example .env` を実行する必要はありません。
+
+### `.env` の安全上の注意
+
+- `.env` をGitへ追加しないでください。`git add -f .env` も実行しません。
+- `.env.example` に実際のTokenを書かないでください。
+- `.env` を他人から受け取るのは、そのDiscord Botの運用を許可された場合だけにしてください。
+- Tokenが第三者に見られた可能性がある場合は、ファイルを消すだけでは不十分です。Discord Developer PortalやTursoでTokenを失効・再発行し、使用する全PCの `.env` を更新します。
+- 同じTurso設定を複数PCで使う場合でも、同じBotを同時に2台で起動しないでください。
 
 ## 7. 依存ライブラリをインストール
 

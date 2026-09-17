@@ -31,36 +31,11 @@ DiscordのテキストメッセージをVOICEVOXで読み上げる、Windows向�
 - Discordアカウントと、自分が管理できるDiscordサーバー
 - Turso Cloud DB（複数PCで同じ設定を共有する場合。ローカルDBでも起動可能）
 
-## 初めてセットアップする方へ
+## セットアップ
 
-事前にNode.jsやVOICEVOXを入れていない場合は、先に **[Windows初回導入ガイド](docs/INSTALL_WINDOWS.md)** を上から順番に進めてください。以下を含め、画面操作から説明しています。
+初回導入の手順は **[Windows初回導入ガイド](docs/INSTALL_WINDOWS.md)** にまとめています。Node.jsとVOICEVOXのインストール、Discord Botの作成、設定ファイルの準備、起動確認まで、上から順番に進めてください。
 
-1. Node.jsのダウンロードとインストール
-2. VOICEVOXのダウンロードと起動確認
-3. Discord Botの作成、Token・Application ID・Server IDの取得
-4. SpeakingBotのダウンロード
-5. `.env` の作成
-6. Discordへのコマンド登録とBotの起動
-
-Node.jsとVOICEVOXをすでに導入し、Discord Botも作成済みの場合の最短手順は次のとおりです。
-
-```cmd
-git clone https://github.com/samatsum/DiscordBot-VOICEVOX.git
-cd /d DiscordBot-VOICEVOX
-copy .env.example .env
-notepad .env
-npm.cmd ci
-npm.cmd run deploy:commands
-npm.cmd run start
-```
-
-コマンドは、必ず `package.json` があるSpeakingBotのフォルダで実行してください。次のコマンドで確認できます。
-
-```cmd
-dir package.json
-```
-
-`ファイルが見つかりません` と表示された場合は、現在いるフォルダが違います。詳しくは[初回導入ガイドの「SpeakingBotのフォルダへ移動」](docs/INSTALL_WINDOWS.md#5-speakingbotのフォルダへ移動)を確認してください。
+既存環境を別PCへ追加する場合や、管理者から設定ファイルを受け取る場合も同じガイドを参照してください。Discord側の詳しい設定は[Discord管理者向け設定](docs/DISCORD_ADMIN_SETUP.md)に分けています。
 
 ## 普段の起動
 
@@ -117,7 +92,7 @@ VOICEVOXを先に起動したままにしてください。終了するときは
 - `TURSO_AUTH_TOKEN`
 - `.env`
 
-`.env` は `.gitignore` で除外されています。
+`.env.example` は設定項目を示す公開用の見本です。実際のTokenを保存する `.env` は `.gitignore` で除外されています。作成方法と、別の管理者から安全に受け取る方法は[Windows初回導入ガイド](docs/INSTALL_WINDOWS.md#6-envファイルを準備)を確認してください。
 
 ## VOICEVOX / 音声ライブラリ
 
